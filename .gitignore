@@ -1,0 +1,9 @@
+# Executables and binaries
+*.exe
+/bin/*
+
+# Object files
+*.o
+
+# Other
+*.txt
