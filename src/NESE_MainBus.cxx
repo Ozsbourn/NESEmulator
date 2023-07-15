@@ -6,22 +6,22 @@
 
 namespace NESE {
 
-	MainBus::MainBus()
-	: m_RAM(0x800, 0),
-	  m_Mapper(nullptr) {}
+    MainBus::MainBus()
+    : m_RAM(0x800, 0),
+      m_Mapper(nullptr) {}
 
-	BYTE MainBus::Read(Address addr) {
+    BYTE MainBus::Read(Address addr) {
         if (addr < 0x2000) {
             return m_RAM[addr & 0x7ff];
         } else if (addr < 0x4020) {
 
-        	//PPU registers, mirrored 
+            //PPU registers, mirrored 
             if (addr < 0x4000) { 
                 auto it = m_ReadCallbacks.find(static_cast<IORegisters>(addr & 0x2007));
                 if (it != m_ReadCallbacks.end()) {
-                	//Second object is the pointer to the function object
+                    //Second object is the pointer to the function object
                     //Dereference the function pointer and call it
-                    return (it -> second)();
+                    return (it->second)();
                 } else {
                     LOG(INFO_VERBOSE) << "No read callback registered for I/O register at: " << std::hex << +addr << std::endl;
                 }
@@ -29,9 +29,9 @@ namespace NESE {
             } else if (addr < 0x4018 && addr >= 0x4014)  { // Only *some* IO registers
                 auto it = m_ReadCallbacks.find(static_cast<IORegisters>(addr));
                 if (it != m_ReadCallbacks.end()) {
-                	//Second object is the pointer to the function object
+                    //Second object is the pointer to the function object
                     //Dereference the function pointer and call it
-                	return (it -> second)();
+                    return (it->second)();
                 } else {
                     LOG(INFO_VERBOSE) << "No read callback registered for I/O register at: " << std::hex << +addr << std::endl;
                 }
@@ -62,21 +62,21 @@ namespace NESE {
 
 
     bool MainBus::SetWriteCallback(IORegisters reg, std::function<void(BYTE)> callback) {
-    	if (!callback) {
-    		LOG(ERROR) << "Callback argument is nullptr" << std::endl;
-    		return false;
-    	} 
+        if (!callback) {
+            LOG(ERROR) << "Callback argument is nullptr" << std::endl;
+            return false;
+        } 
 
-    	return m_WriteCallbacks.emplace(reg, callback).second;
+        return m_WriteCallbacks.emplace(reg, callback).second;
     }
 
     bool MainBus::SetReadCallback(IORegisters reg, std::function<BYTE(void)> callback) {
-    	if (!callback) {
-    		LOG(ERROR) << "Callback argument is nullptr" << std::endl;
-    		return false;
-    	} 
+        if (!callback) {
+            LOG(ERROR) << "Callback argument is nullptr" << std::endl;
+            return false;
+        } 
 
-    	return m_ReadCallbacks.emplace(reg, callback).second;
+        return m_ReadCallbacks.emplace(reg, callback).second;
     }
 
 };
