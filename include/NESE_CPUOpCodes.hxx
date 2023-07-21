@@ -3,7 +3,7 @@
 
 namespace NESE {
 
-	const auto InstructionModeMask         = 0x3;
+    const auto InstructionModeMask         = 0x3;
 
     const auto OperationMask               = 0xe0;
     const auto OperationShift              = 5;
@@ -21,14 +21,14 @@ namespace NESE {
     const auto IRQVector                   = 0xfffe;
 
     enum class BranchOnFlag {
-    	Negative,
-    	Overflow,
-    	Carry,
-    	Zero
+        Negative,
+        Overflow,
+        Carry,
+        Zero
     };
 
     enum class Operation1 {
-    	ORA,
+        ORA,
         AND,
         EOR,
         ADC,
@@ -39,7 +39,7 @@ namespace NESE {
     };
 
     enum class AddrMode1 {
-    	IndexedIndirectX,
+        IndexedIndirectX,
         ZeroPage,
         Immediate,
         Absolute,
@@ -50,7 +50,7 @@ namespace NESE {
     };
 
     enum class Operation2 {
-    	ASL,
+        ASL,
         ROL,
         LSR,
         ROR,
