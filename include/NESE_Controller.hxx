@@ -11,39 +11,39 @@
 
 namespace NESE {
 
-	class Controller {
-	private:
-		bool     m_Strobe;
-		uint32_t m_KeyStates;
+    class Controller {
+    private:
+        bool     m_Strobe;
+        uint32_t m_KeyStates;
 
-		std::vector<sf::Keyboard::Key> m_KeyBindings;
+        std::vector<sf::Keyboard::Key> m_KeyBindings;
 
-	public:
-		enum class Buttons {
-			A,
-			B,
+    public:
+        enum class Buttons {
+            A,
+            B,
 
-			Select,
-			Start,
+            Select,
+            Start,
 
-			Up,
-			Down,
-			Left,
-			Right,
+            Up,
+            Down,
+            Left,
+            Right,
 
-			TotalButtons
-		};
+            TotalButtons
+        };
 
-		Controller(void);
-
-
-		void Strobe(BYTE byte);
-		BYTE Read(void);
-		void SetKeyBindings(const std::vector<sf::Keyboard::Key>& keybinds);
+        Controller(void);
 
 
-		~Controller(void);
-	};
+        void Strobe(BYTE byte);
+        BYTE Read(void);
+        void SetKeyBindings(const std::vector<sf::Keyboard::Key>& keybinds);
+
+
+        ~Controller(void);
+    };
 
 };
 
