@@ -58,9 +58,9 @@ namespace NESE {
         std::streambuf* m_strbuf1;
         std::streambuf* m_strbuf2;
     private:
-        virtual int overflow(int c);
+        virtual int Overflow(int c);
 
-        virtual int sync(void);
+        virtual int Sync(void);
     public:
         explicit TeeBuf(std::streambuf* strbuf1, std::streambuf* strbuf2);
     }
