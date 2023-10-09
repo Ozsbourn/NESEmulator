@@ -59,7 +59,7 @@ namespace NESE {
         }
         void SkipDMACycles(void);
 
-        void interrupt(InterruptType intype);
+        void Interrupt(InterruptType intype);
 
         ~CPU(void);
     };
