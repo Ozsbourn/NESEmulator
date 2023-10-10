@@ -9,6 +9,7 @@
 #ifndef NESE_PPU_HXX_
 #define NESE_PPU_HXX_
 
+
 namespace NESE {
 
     const int ScanlineCycleLength = 341;

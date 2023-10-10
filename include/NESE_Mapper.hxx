@@ -4,6 +4,7 @@
 #include "NESE_CPUOpCodes.hxx"
 #include "NESE_Cartridge.hxx"
 
+
 #ifndef NESE_MAPPER_HXX_
 #define NESE_MAPPER_HXX_
 

@@ -1,9 +1,8 @@
 #include <cstdint>
 #include <vector>
-#include <D:/Dev/Libs/SFML-2.5.1/include/SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp>
 
 #include "NESE_Util.hxx"
-
 
 
 #ifndef NESE_CONTROLLER_HXX_
@@ -19,7 +18,7 @@ namespace NESE {
         std::vector<sf::Keyboard::Key> m_KeyBindings;
 
     public:
-        enum class Buttons {
+        enum Buttons {
             A,
             B,
 

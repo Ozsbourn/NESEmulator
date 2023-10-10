@@ -3,20 +3,20 @@
 
 namespace NESE {
 
-	class MapperCNROM : public Mapper {
-	public:
-		MapperCNROM(Cartridge& cart);
+    class MapperCNROM : public Mapper {
+    public:
+        MapperCNROM(Cartridge& cart);
 
-		void WritePRG(Address addr, BYTE val);
-		void ReadPRG(Address addr);
+        void WritePRG(Address addr, BYTE val);
+        void ReadPRG(Address addr);
 
-		void WriteCHR(Address addr, BYTE val);
-		void ReadCHR(Address addr);
-		
-	private:
-		bool    m_OneBank;
-		Address m_SelectCHR;
-	};
+        void WriteCHR(Address addr, BYTE val);
+        void ReadCHR(Address addr);
+        
+    private:
+        bool    m_OneBank;
+        Address m_SelectCHR;
+    };
 
 };
 

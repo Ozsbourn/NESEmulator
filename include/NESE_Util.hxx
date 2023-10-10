@@ -1,12 +1,11 @@
 #include <cstdint>
-
-#ifndef NESE_UTIL_HXX_
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <cstring>
 #include <memory>
 
+#ifndef NESE_UTIL_HXX_
 #define NESE_UTIL_HXX_
 
 #ifndef __FILENAME__
