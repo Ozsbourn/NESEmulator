@@ -1,7 +1,6 @@
 #include "NESE_VirtualScreen.hxx"
 
 
-
 namespace NESE {
 
     void VirtualScreen::Create(unsigned int w, unsigned int h, float pixel_size, sf::Color color) {

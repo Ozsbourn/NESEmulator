@@ -1,5 +1,6 @@
 #include "NESE_Util.hxx"
 
+
 namespace NESE {
 
 	Log& Log::GetInstance(void) {
