@@ -3,7 +3,7 @@
 
 namespace NESE {
 
-	class MapperGxROM : public Mapper {
+    class MapperGxROM : public Mapper {
     private:
         NameTableMirroring        m_Mirroring;
 
