@@ -12,7 +12,7 @@
 
 namespace NESE {
     
-    enum class IORegisters {
+    enum IORegisters {
         PPUCTRL    = 0x2000,
         PPUMASK,
         PPUSTATUS,
@@ -44,7 +44,7 @@ namespace NESE {
         std::unordered_map<IORegisters, std::function<void(BYTE)>, IORegisterHasher> m_WriteCallbacks;
         std::unordered_map<IORegisters, std::function<BYTE(void)>, IORegisterHasher> m_ReadCallbacks;
     public:
-        explicit MainBus(void);
+        MainBus(void);
 
         BYTE Read(Address addr);
         void Write(Address addr, BYTE value);
