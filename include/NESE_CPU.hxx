@@ -30,6 +30,7 @@ namespace NESE {
 
         // Registers
         Address m_rPC
+        BYTE m_rSP;
         BYTE m_rA;
         BYTE m_rX; 
         BYTE m_rY;
