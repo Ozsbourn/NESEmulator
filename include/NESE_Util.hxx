@@ -18,7 +18,7 @@ namespace NESE {
 
 
 
-    enum class Level {
+    enum Level {
         NONE,
         INFO,
         INFO_VERBOSE,
